@@ -37,11 +37,21 @@ public class Testing {
     public void testLogin() {
         login.LoginForm();
     }
-
     @Test(priority = 2)
-    public void TESTING() {
-        dashboard.SortListTesting();
+    public void SortAtoZ() {
+        dashboard.SortAtoZ();
     }
+    @Test(priority = 3)
+    public void SortZtoA() {
+        dashboard.SortZtoA();
+    }
+
+
+    public void SortLowToHigh() {
+        dashboard.SortLowToHigh();
+    }
+
+
 
 
 

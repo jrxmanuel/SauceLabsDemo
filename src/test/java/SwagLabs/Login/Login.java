@@ -1,6 +1,5 @@
-package SwagLabs;
+package SwagLabs.Login;
 import org.openqa.selenium.By;
-import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,9 +16,6 @@ public class Login
     public Login(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-
-
     }
 
     public void LoopLoginForm()
@@ -79,7 +75,7 @@ public class Login
     }
 
 
-    public void LoginFormInput()
+    public void LoginForm()
     {
         WebElement username = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[contains(@class, 'form_input')and @id = 'user-name']")));

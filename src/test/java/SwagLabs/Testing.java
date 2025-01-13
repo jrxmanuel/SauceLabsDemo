@@ -33,8 +33,26 @@ public class Testing {
     }
 
     @Test(priority = 1) //THIS IS WHERE YOU START YOUR TEST
-
     public void testLogin() {
-        login.LoginFormInput();
+        login.LoopLoginForm();
     }
+
+
+    public void LogoutWebsite() {
+        login.logout();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

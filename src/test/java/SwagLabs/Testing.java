@@ -32,23 +32,31 @@ public class Testing {
             driver.quit();
         }
     }
-
-    @Test(priority = 1) //THIS IS WHERE YOU START YOUR TEST
+    @Test(priority = 1)
+    public void LoopedLoginForm() {
+        login.LoopLoginForm();
+    }
+    @Test(priority = 2) //THIS IS WHERE YOU START YOUR TEST
     public void testLogin() {
         login.LoginForm();
     }
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void SortAtoZ() {
         dashboard.SortAtoZ();
     }
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void SortZtoA() {
         dashboard.SortZtoA();
     }
 
-
+    @Test(priority = 5)
     public void SortLowToHigh() {
         dashboard.SortLowToHigh();
+    }
+
+    @Test(priority = 6)
+    public void SortHighToLow() {
+        dashboard.SortHighToLow();
     }
 
 

@@ -1,5 +1,6 @@
 package SwagLabs.Login;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,6 +40,8 @@ public class Login
                 WebElement LoginButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//input[contains(@class, 'btn_action')and @id = 'login-button']")));
                 LoginButton.click();
+
+
                 WebElement LockedOutUserError = wait.until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//button[contains(@class, 'error-button')]")));
             }
@@ -79,18 +82,19 @@ public class Login
     {
         WebElement username = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[contains(@class, 'form_input')and @id = 'user-name']")));
-        username.sendKeys("standard_user");
+        username.sendKeys(Keys.chord(Keys.CONTROL, "a"), "standard_user");
 
         WebElement password = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[contains(@class, 'form_input')and @id = 'password']")));
-        password.sendKeys("secret_sauce");
+               By.xpath("//input[contains(@class, 'form_input')and @id = 'password']")));
+        password.sendKeys(Keys.chord(Keys.CONTROL, "a"), "secret_sauce");
 
         WebElement LoginButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//input[contains(@class, 'btn_action')and @id = 'login-button']")));
         LoginButton.click();
 
-        WebElement DashboardCheck = wait.until(ExpectedConditions.presenceOfElementLocated(
+        WebElement DashboardLocate = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//div[contains(@class, 'app_logo')]")));
+
 
     }
 

@@ -80,21 +80,54 @@ public class Dashboard {
         SortButton.click();
 
         WebElement SortLowToHighButton = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//option[@value='za' and text()='Name (Z to A)']")));
+                By.xpath("//option[@value='lohi' and text()='Price (low to high)']")));
         SortLowToHighButton.click();
 
-        List<String> itemPriceList = new ArrayList<>();
-        List<String> OriginalPriceList = new ArrayList<>();
+        List<Double> itemPriceList = new ArrayList<>();
+        List<Double> OriginalPriceList = new ArrayList<>();
         List<WebElement> itemPriceElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                 By.xpath("//div[contains(@class, 'inventory_item_price')]")));
 
         for(WebElement itemPrice : itemPriceElements )
-        {   itemPriceList.add(itemPrice.getText());
-            OriginalPriceList.add(itemPrice.getText());
+        {
+            double price = Double.parseDouble(itemPrice.getText().replace("$", ""));
+            itemPriceList.add(price);
+            OriginalPriceList.add(price);
         }
-        System.out.println(itemPriceList+"Z TO A SORTING WORKS"+OriginalPriceList);
 
+        Collections.sort(itemPriceList);
+       Assert.assertEquals(OriginalPriceList, itemPriceList);
 
+        System.out.println("LOW TO HIGH PRICE SORTING WORKS");
+
+    }
+
+    public void SortHighToLow()
+    {
+        WebElement SortButton = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//select[contains(@class, 'product_sort_container')]")));
+        SortButton.click();
+
+        WebElement SortHighToLowButton = wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//option[@value='hilo' and text()='Price (high to low)']")));
+        SortHighToLowButton.click();
+
+        List<Double> itemPriceList = new ArrayList<>();
+        List<Double> OriginalPriceList = new ArrayList<>();
+        List<WebElement> itemPriceElements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+                By.xpath("//div[contains(@class, 'inventory_item_price')]")));
+
+        for(WebElement itemPrice : itemPriceElements )
+        {
+            double price = Double.parseDouble(itemPrice.getText().replace("$", ""));
+            itemPriceList.add(price);
+            OriginalPriceList.add(price);
+        }
+
+        Collections.sort(itemPriceList);
+        Collections.reverse(itemPriceList);
+        Assert.assertEquals(OriginalPriceList, itemPriceList);
+        System.out.println("HIGH TO LOW PRICE SORTING WORKS");
 
     }
 

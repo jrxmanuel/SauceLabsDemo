@@ -42,25 +42,53 @@ public class Testing {
     public void testLogin() {
         login.LoginForm();
     }
+
     @Test(priority = 3)
+    public void allElement()
+    {
+        cartSystem.allElementSize();
+    }
+    @Test(priority = 4)
+    public void addtoCart1()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 5)
     public void SortAtoZ() {
         sortItems.SortAtoZ();
     }
-    @Test(priority = 4)
+    @Test(priority = 6)
+    public void addtoCart2()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 7)
     public void SortZtoA() {
         sortItems.SortZtoA();
     }
-
-    @Test(priority = 5)
+    @Test(priority = 8)
+    public void addtoCart3()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 9)
     public void SortLowToHigh() {
         sortItems.SortLowToHigh();
     }
-
-    @Test(priority = 6)
+    @Test(priority = 10)
+    public void addtoCart4()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 11)
     public void SortHighToLow() {
         sortItems.SortHighToLow();
     }
-
+    @Test(priority = 12)
+    public void addtoCart5()
+    {
+        cartSystem.addtoCart();
+    }
 
 
 

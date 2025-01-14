@@ -1,4 +1,5 @@
 package SwagLabs.Login;
+import SwagLabs.Dashboard.CartSystem;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +14,12 @@ public class Login
 {
     WebDriver driver;
     WebDriverWait wait;
-
+    CartSystem cartSystem;
     public Login(WebDriver driver){
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        cartSystem = new CartSystem(driver);
+
     }
 
     public void LoopLoginForm()
@@ -94,6 +97,7 @@ public class Login
 
         WebElement DashboardLocate = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//div[contains(@class, 'app_logo')]")));
+
 
 
     }

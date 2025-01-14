@@ -1,6 +1,7 @@
 package SwagLabs;
 
-import SwagLabs.Dashboard.Dashboard;
+import SwagLabs.Dashboard.CartSystem;
+import SwagLabs.Dashboard.SortItems;
 import SwagLabs.Login.Login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,9 +12,9 @@ import org.testng.annotations.Test;
 public class Testing {
 
     WebDriver driver;
-
+    CartSystem cartSystem;
     Login login;  //NAME OF OTHER PAGE OBJECT MODELS
-    Dashboard dashboard;
+    SortItems sortItems;
     @BeforeClass
 
     public void setUp() {
@@ -22,7 +23,8 @@ public class Testing {
         //driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/v1/");    //WEBSITE
         login = new Login(driver);
-        dashboard = new Dashboard(driver);
+        sortItems = new SortItems(driver);
+        cartSystem = new CartSystem(driver);
     }
 
     @AfterClass
@@ -40,25 +42,53 @@ public class Testing {
     public void testLogin() {
         login.LoginForm();
     }
+
     @Test(priority = 3)
-    public void SortAtoZ() {
-        dashboard.SortAtoZ();
+    public void allElement()
+    {
+        cartSystem.allElementSize();
     }
     @Test(priority = 4)
-    public void SortZtoA() {
-        dashboard.SortZtoA();
+    public void addtoCart1()
+    {
+        cartSystem.addtoCart();
     }
-
     @Test(priority = 5)
-    public void SortLowToHigh() {
-        dashboard.SortLowToHigh();
+    public void SortAtoZ() {
+        sortItems.SortAtoZ();
     }
-
     @Test(priority = 6)
-    public void SortHighToLow() {
-        dashboard.SortHighToLow();
+    public void addtoCart2()
+    {
+        cartSystem.addtoCart();
     }
-
+    @Test(priority = 7)
+    public void SortZtoA() {
+        sortItems.SortZtoA();
+    }
+    @Test(priority = 8)
+    public void addtoCart3()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 9)
+    public void SortLowToHigh() {
+        sortItems.SortLowToHigh();
+    }
+    @Test(priority = 10)
+    public void addtoCart4()
+    {
+        cartSystem.addtoCart();
+    }
+    @Test(priority = 11)
+    public void SortHighToLow() {
+        sortItems.SortHighToLow();
+    }
+    @Test(priority = 12)
+    public void addtoCart5()
+    {
+        cartSystem.addtoCart();
+    }
 
 
 

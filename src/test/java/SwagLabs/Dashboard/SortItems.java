@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Dashboard {
+public class SortItems {
     WebDriver driver;
     WebDriverWait wait;
 
-    public Dashboard(WebDriver driver)
+    public SortItems(WebDriver driver)
     {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));

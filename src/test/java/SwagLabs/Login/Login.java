@@ -75,6 +75,7 @@ public class Login
 
 
         }
+        System.out.println("ALL ACCOUNTS TESTED");
     }
 
 
@@ -95,7 +96,7 @@ public class Login
         WebElement DashboardLocate = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//div[contains(@class, 'app_logo')]")));
 
-
+        System.out.println("DASHBOARD LOADED, LOGIN WORKS");
     }
 
 

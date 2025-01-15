@@ -1,5 +1,5 @@
-package SwagLabs.Login;
-import SwagLabs.Dashboard.CartSystem;
+package SwagLabs.E2E.Login;
+import SwagLabs.E2E.Dashboard.CartSystem;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

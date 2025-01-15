@@ -1,4 +1,4 @@
-package SwagLabs.Dashboard;
+package SwagLabs.E2E.Dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -140,10 +140,6 @@ public class CartSystem {
         }
 
     }
-
-
-
-
 
     public void removetoCart()
     {

@@ -1,8 +1,8 @@
-package SwagLabs;
+package SwagLabs.E2E;
 
-import SwagLabs.Dashboard.CartSystem;
-import SwagLabs.Dashboard.SortItems;
-import SwagLabs.Login.Login;
+import SwagLabs.E2E.Dashboard.CartSystem;
+import SwagLabs.E2E.Dashboard.SortItems;
+import SwagLabs.E2E.Login.Login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;

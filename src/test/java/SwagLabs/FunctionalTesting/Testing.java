@@ -82,6 +82,14 @@ public class Testing {
         System.out.println("SINGLE ITEMS INSIDE CART PASSED");
     }
 
+    @Test(priority = 4)
+    public void InsideCartSingle2()
+    {
+        loginPage.FillLoginForm();
+        insideCart.checkInsideCartSingle();
+        System.out.println("SINGLE ITEMS INSIDE CART PASSED");
+    }
+
     
 
 
